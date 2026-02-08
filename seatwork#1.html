@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Seatwork 2</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            
+            color: black; 
+            font-family: Arial, sans-serif;
+        }
+        .navbar-custom {
+            background-color: #e468a8;
+            padding: 10px;
+            color: white;
+        }
+        .hero-section {
+            background-color: #f7b2e3;
+            padding: 30px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: white;
+        }
+        .info-box {
+            border: 2px solid #000000;
+            border-radius: 20px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: transparent;
+            color: black;
+        }
+        .brand-list {
+            border: 1px solid #000000;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 5px 0;
+            display: block;
+            width: 100%;
+            background: none;
+            color: #555;
+        }
+        
+        footer {
+            border-top: 1px solid #333;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar-custom d-flex justify-content-between align-items-center">
+        <div>
+            <a href="#" class="text-white me-3 text-decoration-none">Shop</a>
+            <a href="#" class="text-white text-decoration-none">Locate</a>
+        </div>
+        <h2 class="m-0 text-white">Product Locator</h2>
+        <div class="d-flex">
+            <input type="text" class="form-control form-control-sm me-2" placeholder="Search">
+            <button class="btn btn-primary btn-sm">Search</button>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="hero-section">
+            <h3>Do You Want a gaming laptop? </h3>
+            <p>Enter your budget and let's find the right one for you!</p>
+            <input type="number" id="userBudget" class="form-control text-center" placeholder="Enter here...">
+            <button class="btn btn-light mt-3" onclick="checkBudget()">Check Eligibility</button>
+        </div>
+
+        <div class="row mt-5 justify-content-center">
+            <div class="col-md-4">
+                <div class="info-box">Brand & Discounts</div>
+                <p class="small text-secondary">Recommended Brands</p>
+                <div class="brand-list">Acer</div>
+                <div class="brand-list">Asus</div>
+                <div class="brand-list">Lenovo</div>
+                
+                <div class="mt-4">
+                    <p>You are eligible for: <span id="displayValue" class="badge bg-secondary">0.00</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <p>&copy; Georgina Banal</p>
+        <a href="https://www.w3schools.com" class="text-info">Source for Reference</a>
+    </footer>
+
+    <script>
+     
+        function checkBudget() {
+       
+            let budget = document.getElementById("userBudget").value;
+            
+  
+            let formattedValue = Number(budget).toFixed(2);
+
+      
+            if (budget > 0) {
+                document.getElementById("displayValue").innerHTML = "₱" + formattedValue;
+                document.getElementById("displayValue").className = "badge bg-success";
+            } else {
+                alert("Please enter a valid budget!");
+            }
+        }
+    </script>
+
+</body>
+</html>
